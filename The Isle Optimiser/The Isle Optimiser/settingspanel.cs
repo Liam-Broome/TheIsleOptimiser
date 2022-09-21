@@ -3,9 +3,9 @@ using System.Text;
 
 namespace The_Isle_Optimiser
 {
-    public partial class Form1 : Form
+    public partial class settingspanel : Form
     {
-        public Form1()
+        public settingspanel()
         {
             InitializeComponent();
         }
@@ -26,10 +26,12 @@ namespace The_Isle_Optimiser
         public string R_FoliageQuality;
         public string R_ShadingQuality;
 
+        public string GameUserSettingsLocation;
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            var GameUserSettingsLocation = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\TheIsle\\Saved\\Config\\WindowsClient\\GameUserSettings.ini";
+            GameUserSettingsLocation = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\TheIsle\\Saved\\Config\\WindowsClient\\GameUserSettings.ini";
 
             if (File.Exists(GameUserSettingsLocation)) {
                 _ = new FileInfo(GameUserSettingsLocation)
@@ -69,6 +71,25 @@ namespace The_Isle_Optimiser
 
 
             }
+        }
+
+        private void ApplySettings_Click(object sender, EventArgs e)
+        {
+            WriteValueA("ScalabilityGroups", "sg.ResolutionQuality", ResolutionQuality.Value.ToString() , GameUserSettingsLocation);
+            WriteValueA("ScalabilityGroups", "sg.ViewDistanceQuality", ViewDistanceQuality.Value.ToString(), GameUserSettingsLocation);
+            WriteValueA("ScalabilityGroups", "sg.AntiAliasingQuality", AntiAliasingQuality.Value.ToString(), GameUserSettingsLocation);
+            WriteValueA("ScalabilityGroups", "sg.ShadowQuality", ShadowQuality.Value.ToString(), GameUserSettingsLocation);
+            WriteValueA("ScalabilityGroups", "sg.PostProcessQuality", PostProcessQuality.Value.ToString(), GameUserSettingsLocation);
+            WriteValueA("ScalabilityGroups", "sg.EffectsQuality", EffectsQuality.Value.ToString(), GameUserSettingsLocation);
+            WriteValueA("ScalabilityGroups", "sg.FoliageQuality", FoliageQuality.Value.ToString(), GameUserSettingsLocation);
+            WriteValueA("ScalabilityGroups", "sg.ShadingQuality", ShadingQuality.Value.ToString(), GameUserSettingsLocation);
+
+            _ = new FileInfo(GameUserSettingsLocation)
+            {
+                IsReadOnly = true
+            };
+
+            MessageBox.Show("Settings updated: Successful.");
         }
     }
 }

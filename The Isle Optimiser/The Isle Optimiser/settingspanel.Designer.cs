@@ -1,6 +1,6 @@
 ﻿namespace The_Isle_Optimiser
 {
-    partial class Form1
+    partial class settingspanel
     {
         /// <summary>
         ///  Required designer variable.
@@ -46,7 +46,7 @@
             this.FoliageQuality = new System.Windows.Forms.TrackBar();
             this.label9 = new System.Windows.Forms.Label();
             this.ShadingQuality = new System.Windows.Forms.TrackBar();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ApplySettings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ResolutionQuality)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ViewDistanceQuality)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AntiAliasingQuality)).BeginInit();
@@ -69,7 +69,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(25, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 15);
             this.label1.TabIndex = 1;
@@ -78,6 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(12, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 15);
@@ -94,7 +96,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 155);
+            this.label3.ForeColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(16, 155);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(117, 15);
@@ -111,7 +114,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 230);
+            this.label4.ForeColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(25, 230);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(90, 15);
@@ -128,7 +132,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(164, 9);
+            this.label5.ForeColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(171, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 15);
             this.label5.TabIndex = 8;
@@ -144,7 +149,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(164, 75);
+            this.label6.ForeColor = System.Drawing.Color.Transparent;
+            this.label6.Location = new System.Drawing.Point(182, 75);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 15);
             this.label6.TabIndex = 10;
@@ -160,7 +166,8 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(164, 155);
+            this.label7.ForeColor = System.Drawing.Color.Transparent;
+            this.label7.Location = new System.Drawing.Point(185, 155);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 15);
             this.label7.TabIndex = 12;
@@ -176,7 +183,8 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(164, 230);
+            this.label8.ForeColor = System.Drawing.Color.Transparent;
+            this.label8.Location = new System.Drawing.Point(182, 230);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 15);
             this.label8.TabIndex = 14;
@@ -192,7 +200,8 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 305);
+            this.label9.ForeColor = System.Drawing.Color.Transparent;
+            this.label9.Location = new System.Drawing.Point(25, 305);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 15);
             this.label9.TabIndex = 16;
@@ -205,21 +214,25 @@
             this.ShadingQuality.Size = new System.Drawing.Size(121, 45);
             this.ShadingQuality.TabIndex = 17;
             // 
-            // button1
+            // ApplySettings
             // 
-            this.button1.Location = new System.Drawing.Point(164, 332);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 24);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Apply";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ApplySettings.BackColor = System.Drawing.Color.SpringGreen;
+            this.ApplySettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ApplySettings.Location = new System.Drawing.Point(164, 332);
+            this.ApplySettings.Name = "ApplySettings";
+            this.ApplySettings.Size = new System.Drawing.Size(121, 24);
+            this.ApplySettings.TabIndex = 18;
+            this.ApplySettings.Text = "Apply";
+            this.ApplySettings.UseVisualStyleBackColor = false;
+            this.ApplySettings.Click += new System.EventHandler(this.ApplySettings_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 385);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.SystemColors.WindowText;
+            this.ClientSize = new System.Drawing.Size(290, 368);
+            this.Controls.Add(this.ApplySettings);
             this.Controls.Add(this.ShadingQuality);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.FoliageQuality);
@@ -238,6 +251,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ResolutionQuality);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "The Isle Optimiser";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -256,8 +270,6 @@
         }
 
         #endregion
-
-        private TrackBar ResolutionQuality;
         private Label label1;
         private Label label2;
         private TrackBar ViewDistanceQuality;
@@ -275,6 +287,7 @@
         private TrackBar FoliageQuality;
         private Label label9;
         private TrackBar ShadingQuality;
-        private Button button1;
+        private Button ApplySettings;
+        public TrackBar ResolutionQuality;
     }
 }
