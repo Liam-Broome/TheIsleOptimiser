@@ -40,41 +40,35 @@ namespace The_Isle_Optimiser
                 StringBuilder temp = new(255);
 
                 _ = GetKeyValueA("ScalabilityGroups", "sg.ResolutionQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                R_ResolutionQuality = temp.ToString(); 
+
+                ResolutionQuality.Value = Convert.ToInt32(Decimal.Round(Decimal.Parse(temp.ToString()), 1));
 
                 _ = GetKeyValueA("ScalabilityGroups", "sg.ViewDistanceQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                R_ViewDistanceQuality = temp.ToString(); 
+                ViewDistanceQuality.Value = Convert.ToInt32(temp.ToString());
 
                 _ = GetKeyValueA("ScalabilityGroups", "sg.AntiAliasingQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                R_AntiAliasingQuality = temp.ToString(); 
+                AntiAliasingQuality.Value = Convert.ToInt32(temp.ToString());
 
                 _ = GetKeyValueA("ScalabilityGroups", "sg.ShadowQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                R_ShadowQuality = temp.ToString(); 
+                ShadowQuality.Value = Convert.ToInt32(temp.ToString());
 
                 _ = GetKeyValueA("ScalabilityGroups", "sg.PostProcessQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                R_PostProcessQuality = temp.ToString(); 
+                PostProcessQuality.Value = Convert.ToInt32(temp.ToString());
 
                 _ = GetKeyValueA("ScalabilityGroups", "sg.TextureQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                R_TextureQuality = temp.ToString(); 
+                TextureQuality.Value = Convert.ToInt32(temp.ToString());
 
                 _ = GetKeyValueA("ScalabilityGroups", "sg.EffectsQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                R_EffectsQuality = temp.ToString(); 
+                EffectsQuality.Value = Convert.ToInt32(temp.ToString());
 
                 _ = GetKeyValueA("ScalabilityGroups", "sg.FoliageQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                R_FoliageQuality = temp.ToString();
+                FoliageQuality.Value = Convert.ToInt32(temp.ToString());
 
                 _ = GetKeyValueA("ScalabilityGroups", "sg.ShadingQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                R_EffectsQuality = temp.ToString();
-
-                ApplyTrackBars();
+                ShadingQuality.Value = Convert.ToInt32(temp.ToString());
 
 
             }
-        }
-
-        public void ApplyTrackBars()
-        {
-            ResolutionQuality.Value = Convert.ToInt32(R_ResolutionQuality);
         }
     }
 }
