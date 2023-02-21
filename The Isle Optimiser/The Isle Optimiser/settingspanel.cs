@@ -16,16 +16,6 @@ namespace The_Isle_Optimiser
         [DllImport("kernel32.dll", EntryPoint = "GetPrivateProfileString")]
         public static extern int GetKeyValueA(string strSection, string strKeyName, string strEmpty, StringBuilder RetVal, int nSize, string strFilePath);
 
-        public string R_ResolutionQuality;
-        public string R_ViewDistanceQuality;
-        public string R_AntiAliasingQuality;
-        public string R_ShadowQuality;
-        public string R_PostProcessQuality;
-        public string R_TextureQuality;
-        public string R_EffectsQuality;
-        public string R_FoliageQuality;
-        public string R_ShadingQuality;
-
         public string GameUserSettingsLocation;
 
         private void Form1_Load(object sender, EventArgs e)
