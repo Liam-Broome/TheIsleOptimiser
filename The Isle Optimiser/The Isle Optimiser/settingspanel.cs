@@ -5,79 +5,85 @@ namespace The_Isle_Optimiser
 {
     public partial class settingspanel : Form
     {
+
+        private const int MaxWriteValue = 10;
+        public string gameUserSettingsPath;
+
+        [DllImport("kernel32.dll", EntryPoint = "WritePrivateProfileString")]
+        public static extern long WriteValue(string strSection, string strKeyName, string strValue, string strFilePath);
+
+        [DllImport("kernel32.dll", EntryPoint = "GetPrivateProfileString")]
+        public static extern int GetKeyValue(string strSection, string strKeyName, string strEmpty, StringBuilder RetVal, int nSize, string strFilePath);
+
         public settingspanel()
         {
             InitializeComponent();
+            gameUserSettingsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TheIsle", "Saved", "Config", "WindowsClient", "GameUserSettings.ini");
         }
 
-        [DllImport("kernel32.dll", EntryPoint = "WritePrivateProfileString")]
-        public static extern long WriteValueA(string strSection, string strKeyName, string strValue, string strFilePath);
-
-        [DllImport("kernel32.dll", EntryPoint = "GetPrivateProfileString")]
-        public static extern int GetKeyValueA(string strSection, string strKeyName, string strEmpty, StringBuilder RetVal, int nSize, string strFilePath);
-
-        public string GameUserSettingsLocation;
+        private static int GetIntFromSettingValueBuffer(StringBuilder settingValueBuffer)
+        {
+            return Convert.ToInt32(settingValueBuffer.ToString());
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            GameUserSettingsLocation = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\TheIsle\\Saved\\Config\\WindowsClient\\GameUserSettings.ini";
+            if (File.Exists(gameUserSettingsPath))
+            {
+                //Setting the buffer for the max setting value.
+                StringBuilder settingValueBuffer = new(MaxWriteValue);
 
-            if (File.Exists(GameUserSettingsLocation)) {
-                _ = new FileInfo(GameUserSettingsLocation)
-                {
-                    IsReadOnly = false
-                };
+                //Write Resolution Quality. 
+                GetKeyValue("ScalabilityGroups", "sg.ResolutionQuality", string.Empty, settingValueBuffer, MaxWriteValue, gameUserSettingsPath);
+                ResolutionQuality.Value = (int)Math.Round(double.Parse(settingValueBuffer.ToString()), 1);
 
-                StringBuilder temp = new(255);
+                //Write View Distance Quality. 
+                GetKeyValue("ScalabilityGroups", "sg.ViewDistanceQuality", string.Empty, settingValueBuffer, MaxWriteValue, gameUserSettingsPath);
+                ViewDistanceQuality.Value = GetIntFromSettingValueBuffer(settingValueBuffer);
 
-                _ = GetKeyValueA("ScalabilityGroups", "sg.ResolutionQuality", string.Empty, temp, 255, GameUserSettingsLocation);
+                //Write Anti Aliasing Quality. 
+                GetKeyValue("ScalabilityGroups", "sg.AntiAliasingQuality", string.Empty, settingValueBuffer, MaxWriteValue, gameUserSettingsPath);
+                AntiAliasingQuality.Value = GetIntFromSettingValueBuffer(settingValueBuffer);
 
-                ResolutionQuality.Value = Convert.ToInt32(Decimal.Round(Decimal.Parse(temp.ToString()), 1));
+                //Write Shadow Quality. 
+                GetKeyValue("ScalabilityGroups", "sg.ShadowQuality", string.Empty, settingValueBuffer, MaxWriteValue, gameUserSettingsPath);
+                ShadowQuality.Value = GetIntFromSettingValueBuffer(settingValueBuffer);
 
-                _ = GetKeyValueA("ScalabilityGroups", "sg.ViewDistanceQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                ViewDistanceQuality.Value = Convert.ToInt32(temp.ToString());
+                //Write Post Process Quality. 
+                GetKeyValue("ScalabilityGroups", "sg.PostProcessQuality", string.Empty, settingValueBuffer, MaxWriteValue, gameUserSettingsPath);
+                PostProcessQuality.Value = GetIntFromSettingValueBuffer(settingValueBuffer);
 
-                _ = GetKeyValueA("ScalabilityGroups", "sg.AntiAliasingQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                AntiAliasingQuality.Value = Convert.ToInt32(temp.ToString());
+                //Write Texture Quality. 
+                GetKeyValue("ScalabilityGroups", "sg.TextureQuality", string.Empty, settingValueBuffer, MaxWriteValue, gameUserSettingsPath);
+                TextureQuality.Value = GetIntFromSettingValueBuffer(settingValueBuffer);
 
-                _ = GetKeyValueA("ScalabilityGroups", "sg.ShadowQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                ShadowQuality.Value = Convert.ToInt32(temp.ToString());
+                //Write Effects Quality. 
+                GetKeyValue("ScalabilityGroups", "sg.EffectsQuality", string.Empty, settingValueBuffer, MaxWriteValue, gameUserSettingsPath);
+                EffectsQuality.Value = GetIntFromSettingValueBuffer(settingValueBuffer);
 
-                _ = GetKeyValueA("ScalabilityGroups", "sg.PostProcessQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                PostProcessQuality.Value = Convert.ToInt32(temp.ToString());
+                //Write Foliage Quality. 
+                GetKeyValue("ScalabilityGroups", "sg.FoliageQuality", string.Empty, settingValueBuffer, MaxWriteValue, gameUserSettingsPath);
+                FoliageQuality.Value = GetIntFromSettingValueBuffer(settingValueBuffer);
 
-                _ = GetKeyValueA("ScalabilityGroups", "sg.TextureQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                TextureQuality.Value = Convert.ToInt32(temp.ToString());
-
-                _ = GetKeyValueA("ScalabilityGroups", "sg.EffectsQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                EffectsQuality.Value = Convert.ToInt32(temp.ToString());
-
-                _ = GetKeyValueA("ScalabilityGroups", "sg.FoliageQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                FoliageQuality.Value = Convert.ToInt32(temp.ToString());
-
-                _ = GetKeyValueA("ScalabilityGroups", "sg.ShadingQuality", string.Empty, temp, 255, GameUserSettingsLocation);
-                ShadingQuality.Value = Convert.ToInt32(temp.ToString());
-
-
+                //Write Shading Quality. 
+                GetKeyValue("ScalabilityGroups", "sg.ShadingQuality", string.Empty, settingValueBuffer, MaxWriteValue, gameUserSettingsPath);
+                ShadingQuality.Value = GetIntFromSettingValueBuffer(settingValueBuffer);
             }
         }
 
         private void ApplySettings_Click(object sender, EventArgs e)
         {
-            WriteValueA("ScalabilityGroups", "sg.ResolutionQuality", ResolutionQuality.Value.ToString() , GameUserSettingsLocation);
-            WriteValueA("ScalabilityGroups", "sg.ViewDistanceQuality", ViewDistanceQuality.Value.ToString(), GameUserSettingsLocation);
-            WriteValueA("ScalabilityGroups", "sg.AntiAliasingQuality", AntiAliasingQuality.Value.ToString(), GameUserSettingsLocation);
-            WriteValueA("ScalabilityGroups", "sg.ShadowQuality", ShadowQuality.Value.ToString(), GameUserSettingsLocation);
-            WriteValueA("ScalabilityGroups", "sg.PostProcessQuality", PostProcessQuality.Value.ToString(), GameUserSettingsLocation);
-            WriteValueA("ScalabilityGroups", "sg.EffectsQuality", EffectsQuality.Value.ToString(), GameUserSettingsLocation);
-            WriteValueA("ScalabilityGroups", "sg.FoliageQuality", FoliageQuality.Value.ToString(), GameUserSettingsLocation);
-            WriteValueA("ScalabilityGroups", "sg.ShadingQuality", ShadingQuality.Value.ToString(), GameUserSettingsLocation);
+            WriteValue("ScalabilityGroups", "sg.ResolutionQuality", ResolutionQuality.Value.ToString() , gameUserSettingsPath);
+            WriteValue("ScalabilityGroups", "sg.ViewDistanceQuality", ViewDistanceQuality.Value.ToString(), gameUserSettingsPath);
+            WriteValue("ScalabilityGroups", "sg.AntiAliasingQuality", AntiAliasingQuality.Value.ToString(), gameUserSettingsPath);
+            WriteValue("ScalabilityGroups", "sg.ShadowQuality", ShadowQuality.Value.ToString(), gameUserSettingsPath);
+            WriteValue("ScalabilityGroups", "sg.PostProcessQuality", PostProcessQuality.Value.ToString(), gameUserSettingsPath);
+            WriteValue("ScalabilityGroups", "sg.EffectsQuality", EffectsQuality.Value.ToString(), gameUserSettingsPath);
+            WriteValue("ScalabilityGroups", "sg.FoliageQuality", FoliageQuality.Value.ToString(), gameUserSettingsPath);
+            WriteValue("ScalabilityGroups", "sg.ShadingQuality", ShadingQuality.Value.ToString(), gameUserSettingsPath);
 
-            _ = new FileInfo(GameUserSettingsLocation)
-            {
-                IsReadOnly = true
-            };
+            new FileInfo(gameUserSettingsPath) { IsReadOnly = true };
 
             MessageBox.Show("Settings updated: Successful.");
         }

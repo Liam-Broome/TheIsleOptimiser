@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "The Isle Optimiser Setup", "The Isle Optimiser Setup\The Isle Optimiser Setup.vdproj", "{22328563-6476-4E1F-9C9D-8368D200B01D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22328563-6476-4E1F-9C9D-8368D200B01D}.Debug|Default.ActiveCfg = Debug
+		{22328563-6476-4E1F-9C9D-8368D200B01D}.Debug|Default.Build.0 = Debug
+		{22328563-6476-4E1F-9C9D-8368D200B01D}.Release|Default.ActiveCfg = Release
+		{22328563-6476-4E1F-9C9D-8368D200B01D}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDAF19D3-9F3C-4B23-8B31-AA0F1B2F8E73}
+	EndGlobalSection
+EndGlobal

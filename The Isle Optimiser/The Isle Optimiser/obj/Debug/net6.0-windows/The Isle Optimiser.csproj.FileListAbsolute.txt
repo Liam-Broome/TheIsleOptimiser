@@ -1,0 +1,17 @@
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\bin\Debug\net6.0-windows\The Isle Optimiser.exe
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\bin\Debug\net6.0-windows\The Isle Optimiser.deps.json
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\bin\Debug\net6.0-windows\The Isle Optimiser.runtimeconfig.json
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\bin\Debug\net6.0-windows\The Isle Optimiser.dll
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\bin\Debug\net6.0-windows\The Isle Optimiser.pdb
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\obj\Debug\net6.0-windows\The Isle Optimiser.csproj.AssemblyReference.cache
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\obj\Debug\net6.0-windows\The Isle Optimiser.csproj.GenerateResource.cache
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\obj\Debug\net6.0-windows\The Isle Optimiser.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\obj\Debug\net6.0-windows\The Isle Optimiser.AssemblyInfoInputs.cache
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\obj\Debug\net6.0-windows\The Isle Optimiser.AssemblyInfo.cs
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\obj\Debug\net6.0-windows\The Isle Optimiser.csproj.CoreCompileInputs.cache
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\obj\Debug\net6.0-windows\The Isle Optimiser.dll
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\obj\Debug\net6.0-windows\refint\The Isle Optimiser.dll
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\obj\Debug\net6.0-windows\The Isle Optimiser.pdb
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\obj\Debug\net6.0-windows\The Isle Optimiser.genruntimeconfig.cache
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\obj\Debug\net6.0-windows\ref\The Isle Optimiser.dll
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\obj\Debug\net6.0-windows\The_Isle_Optimiser.settingspanel.resources

@@ -1,0 +1,5 @@
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\bin\Release\net6.0-windows\publish\TheIsleOptimiser.exe
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\bin\Release\net6.0-windows\publish\TheIsleOptimiser.dll
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\bin\Release\net6.0-windows\publish\TheIsleOptimiser.deps.json
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\bin\Release\net6.0-windows\publish\TheIsleOptimiser.runtimeconfig.json
+C:\Users\Liam\Documents\GitHub\TheIsleOptimiser\The Isle Optimiser\The Isle Optimiser\bin\Release\net6.0-windows\publish\TheIsleOptimiser.pdb
