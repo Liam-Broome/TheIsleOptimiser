@@ -1,6 +1,6 @@
-# TheIsleOptimiser
+# The Isle Optimiser
 
-TheIsleOptimiser is a Windows application that provides extensive settings options for the game "The Isle". It allows you to have more freedom with your in-game settings and optimize your gameplay experience.
+The Isle Optimiser is a Windows application that provides extensive settings options for the game "The Isle". It allows you to have more freedom with your in-game settings and optimize your gameplay experience.
 
 ## Features
 
@@ -23,4 +23,4 @@ TheIsleOptimiser is a Windows application that provides extensive settings optio
 
 ## Contributing
 
-Contributions to TheIsleOptimiser are always welcome. To contribute, please fork the repository, make your changes, and submit a pull request.
+Contributions to The Isle Optimiser are always welcome. To contribute, please fork the repository, make your changes, and submit a pull request.
